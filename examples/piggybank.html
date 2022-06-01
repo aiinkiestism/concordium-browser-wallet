@@ -10,7 +10,7 @@
             function concordiumReady() {
                 document.getElementById('connectContract').addEventListener('click', () => {
                     console.log('test');
-                    client.getInstanceInfo({ index: index.value, subindex: 0 }).then((result) => {
+                    client.getInstanceInfo({ index: BigInt(index.value), subindex: 0n }).then((result) => {
                         console.log(result);
                         contractState = result;
                         concordiumSDK.AccountAddress.prototype.toJSON = function () {
